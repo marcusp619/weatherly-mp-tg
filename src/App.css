@@ -1,5 +1,5 @@
 .app {
   display: grid;
-  background: linear-gradient(to bottom right, #6CD4FF, #031926)
+  grid-template-columns: 1fr 1fr;
 }
 /*#6cd4ff-maya blue, #8b80f9-slate blue, lavender - #e5d9f2, magnolia- #F5efff, mastrictblue - #031926*/
