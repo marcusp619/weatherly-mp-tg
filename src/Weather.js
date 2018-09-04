@@ -9,7 +9,7 @@ class Weather extends Component {
   render() {
     return (
         <div>
-          {this.props.data}
+          {this.props.forecast.current_observation.image.url}
           {console.log(this.props)}
           {console.log(this.props.forecast.current_observation)}
           {}
