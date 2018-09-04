@@ -1,28 +1,5 @@
-.App {
-  text-align: center;
+.app {
+  display: grid;
+  background: linear-gradient(to bottom right, #6CD4FF, #031926)
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/*#6cd4ff-maya blue, #8b80f9-slate blue, lavender - #e5d9f2, magnolia- #F5efff, mastrictblue - #031926*/
