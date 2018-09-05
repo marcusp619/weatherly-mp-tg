@@ -23,6 +23,15 @@
   /* display: inline-block; */
 }
 
+
 .weather__subtitle {
   display: inline-block;
+}
+
+.weather__todayHigh {
+  grid-row: 4;
+}
+
+.weather__todayLow {
+  grid-row: 4;
 }
