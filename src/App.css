@@ -1,5 +1,27 @@
+
+/* font-family: 'Elsie', cursive;
+font-family: 'Open Sans', sans-serif; */
 .app {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app__header {
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 200px;
+  border-bottom: 2px solid black;
+  text-shadow:  0px 15px 5px rgba(0,0,0,0.1),
+  10px 20px 5px rgba(0,0,0,0.05),
+  -10px 20px 5px rgba(0,0,0,0.05);
+}
+
+.app__title {
+  font-family: 'Elsie', cursive;
+  font-size: 5rem;
 }
 /*#6cd4ff-maya blue, #8b80f9-slate blue, lavender - #e5d9f2, magnolia- #F5efff, mastrictblue - #031926*/

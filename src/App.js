@@ -8,9 +8,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="App-header">
-          <h1>Weatherly</h1>
+        <header className="app__header">
+          <h1 className="app__title">Weatherly</h1>
         </header>
+        <Weather forecast={data}/>
         <Weather forecast={data}/>
       </div>
     );
