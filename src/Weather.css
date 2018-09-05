@@ -1,0 +1,37 @@
+.weather {
+  background: #F5EFFF;
+  /* width: 50%; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2%;
+  border-radius: 4%;
+  box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
+  10px 20px 5px rgba(0,0,0,0.05),
+  -10px 20px 5px rgba(0,0,0,0.05);
+}
+
+.weather__city {
+  justify-self: center;
+  grid-column: span 2;
+}
+
+.weather__fullForecast {
+  grid-column: span 2;
+}
+
+.weather__icon {
+  /* display: inline-block; */
+}
+
+
+.weather__subtitle {
+  display: inline-block;
+}
+
+.weather__todayHigh {
+  grid-row: 4;
+}
+
+.weather__todayLow {
+  grid-row: 4;
+}
