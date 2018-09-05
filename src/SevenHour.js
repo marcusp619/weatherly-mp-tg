@@ -8,12 +8,14 @@ export default class SevenHour extends Component {
     super()
   }
 
+  
+
   render() {
+      
     return (
-        {forecast.map((hour, index) => {
-         return <Card image={hour.icon_url} time={hour.FCTTIME.civil} temp={hour.temp.english} key={index}/>
-        })
-      }
+      this.props.forecast.slice(0, 7).map((hour, index) => {
+        return <Card image={hour.icon_url} time={hour.FCTTIME.civil} temp={hour.temp.english} key={index}/>
+      })
     )
   }
 }
