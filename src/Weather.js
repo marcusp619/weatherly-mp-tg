@@ -18,21 +18,22 @@ export default class Weather extends Component {
     let nightForecast = this.props.forecast.forecast.txt_forecast.forecastday[1].fcttext_metric;
 
     return (
-        <div className='weather'>
-         <h1 className='weather__city'> {city}</h1>
-          <h2 className='weather__subtitle'>
-            {weatherCondition}
-          </h2>
-          <span className="weather__icon"><img src={icon} /></span>
-          <h4>{temperature}</h4>
-          <h4 className='weather__todayHigh'>
+      <div className='weather'>
+        {/* <h1 className='weather__city'> {city}</h1> */}
+        <h1 className='weather__city'> Today</h1>
+        <h2 className='weather__subtitle'>
+          {weatherCondition}
+        </h2>
+        <img className="weather__icon" src={icon} />
+        <h2 className='weather__temp'>{temperature}</h2>
+        <h2 className='weather__todayHigh'>
           {fahrenheit}
-          </h4>
-          <h4 className='weather__todayLow'>
+        </h2>
+        <h2 className='weather__todayLow'>
           {lowTemp}
-          </h4>
-          <p className="weather__fullForecast">{dayForecast} and tonight {nightForecast} </p>
-        </div>
-      )
+        </h2>
+        <h2 className="weather__fullForecast">{dayForecast} and tonight {nightForecast} </h2>
+      </div>
+    );
   }
 } 

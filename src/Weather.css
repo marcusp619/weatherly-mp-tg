@@ -1,37 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
+
+*{
+  box-sizing: border-box;
+}
+
 .weather {
   background: #F5EFFF;
   /* width: 50%; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 2%;
   border-radius: 4%;
+  justify-items: center;
+  align-items: center;
   box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
   10px 20px 5px rgba(0,0,0,0.05),
   -10px 20px 5px rgba(0,0,0,0.05);
 }
 
 .weather__city {
+  font-family: 'Elsie', cursive;
   justify-self: center;
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .weather__fullForecast {
-  grid-column: span 2;
+  grid-column: span 3;
+  padding: 13px;
 }
 
 .weather__icon {
-  /* display: inline-block; */
+  grid-column: span 2;
+  width: 100px;
 }
 
+.weather__temp {
+  grid-row: 3;
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-align: center;
+}
 
 .weather__subtitle {
-  display: inline-block;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .weather__todayHigh {
-  grid-row: 4;
+  grid-row: 3;
+  font-size: 3em;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .weather__todayLow {
-  grid-row: 4;
+  grid-row: 3;
+  font-size: 3em;
+  font-family: 'IBM Plex Sans', sans-serif;
 }

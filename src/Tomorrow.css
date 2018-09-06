@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
+
+*{
+  box-sizing: border-box;
+}
+
 .tomorrow {
   background: #F5EFFF;
-  /* width: 50%; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2%;
@@ -8,9 +13,12 @@
   box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
   10px 20px 5px rgba(0,0,0,0.05),
   -10px 20px 5px rgba(0,0,0,0.05);
+  justify-items: center;
+  align-items: center;
 }
 
 .tomorrow__title {
+  font-family: 'Elsie', cursive;
   justify-self: center;
   grid-column: span 2;
 }
@@ -18,21 +26,24 @@
 .tomorrow__fullForecast {
   grid-column: 4;
   grid-column: span 2;
+  padding: 13px;
+  font-size: 1.2em;
 }
-
-.tomorrow__icon {
-  /* display: inline-block; */
-}
-
 
 .tomorrow__subtitle {
   display: inline-block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 2em;
 }
 
 .tomorrow__todayHigh {
   grid-row: 3;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 3em;
 }
 
 .tomorrow__todayLow {
   grid-row: 3;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 3em;
 }
