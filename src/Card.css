@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
+
+*{
+  box-sizing: border-box;
+}
+
 .card {
   background: #F5EFFF;
   display: grid;
@@ -10,6 +16,7 @@
   10px 20px 5px rgba(0,0,0,0.05),
   -10px 20px 5px rgba(0,0,0,0.05);
   margin-bottom: 2%;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .card__icon {
