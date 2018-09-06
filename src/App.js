@@ -5,6 +5,7 @@ import data from './Data';
 import Weather from './Weather';
 import SevenHour from './SevenHour';
 import Tomorrow from './Tomorrow';
+import TenDay from './TenDay';
 
 export default class App extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
         <Weather forecast={data}/>
         <SevenHour forecast={data.hourly_forecast}/>
         <Tomorrow forecast={data}/>
+        <TenDay forecast={data}/>
       </div>
     );
   }
