@@ -4,6 +4,7 @@ import './App.css';
 import data from './Data';
 import Weather from './Weather';
 import SevenHour from './SevenHour';
+import Tomorrow from './Tomorrow';
 
 export default class App extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class App extends Component {
           <h1 className="app__title">Weatherly</h1>
         </header>
         <Weather forecast={data}/>
-        <Weather forecast={data}/>
+        <Tomorrow forecast={data}/>
         <SevenHour forecast={data.hourly_forecast}/>
       </div>
     );
