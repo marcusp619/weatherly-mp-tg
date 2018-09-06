@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
+
+*{
+  box-sizing: border-box;
+}
+
 .weather {
   background: #F5EFFF;
   /* width: 50%; */
@@ -20,27 +26,33 @@
 
 .weather__fullForecast {
   grid-column: span 3;
+  padding: 13px;
 }
 
 .weather__icon {
   grid-column: span 2;
-  width: 200px;
+  width: 100px;
 }
 
 .weather__temp {
   grid-row: 3;
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-align: center;
 }
 
 .weather__subtitle {
   text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .weather__todayHigh {
   grid-row: 3;
   font-size: 3em;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .weather__todayLow {
   grid-row: 3;
   font-size: 3em;
+  font-family: 'IBM Plex Sans', sans-serif;
 }

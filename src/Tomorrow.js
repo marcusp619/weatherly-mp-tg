@@ -23,12 +23,12 @@ export default class Weather extends Component {
           {weatherCondition}
         </h2>
         <span className="tomorrow__icon"><img src={icon} /></span>
-        <h4 className='tomorrow__todayHigh'>
+        <h2 className='tomorrow__todayHigh'>
           {fahrenheit}
-        </h4>
-        <h4 className='tomorrow__todayLow'>
+        </h2>
+        <h2 className='tomorrow__todayLow'>
           {lowTemp}
-        </h4>
+        </h2>
         <p className="tomorrow__fullForecast">{dayForecast}</p>
       </div>
     );
