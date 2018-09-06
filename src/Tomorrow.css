@@ -1,6 +1,5 @@
 .tomorrow {
   background: #F5EFFF;
-  /* width: 50%; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2%;
@@ -11,6 +10,7 @@
 }
 
 .tomorrow__title {
+  font-family: 'Elsie', cursive;
   justify-self: center;
   grid-column: span 2;
 }

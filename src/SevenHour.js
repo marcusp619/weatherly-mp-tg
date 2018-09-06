@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Card from './Card';
-import './Card.css';
 
 export default class SevenHour extends Component {
   constructor() {
