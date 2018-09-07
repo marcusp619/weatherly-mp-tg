@@ -8,14 +8,15 @@ export default class Weather extends Component {
   }
 
   render() {
-    let temperature = this.props.forecast.current_observation.temperature_string;
-    let icon = this.props.forecast.current_observation.icon_url;
-    let weatherCondition = this.props.forecast.current_observation.weather;
-    let city = this.props.forecast.current_observation.display_location.city;
-    let fahrenheit = this.props.forecast.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-    let lowTemp = this.props.forecast.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-    let dayForecast = this.props.forecast.forecast.txt_forecast.forecastday[0].fcttext_metric;
-    let nightForecast = this.props.forecast.forecast.txt_forecast.forecastday[1].fcttext_metric;
+    console.log(this.props.data)
+    let temperature = this.props.data.current_observation.temperature_string;
+    let icon = this.props.data.current_observation.icon_url;
+    let weatherCondition = this.props.data.current_observation.weather;
+    let city = this.props.data.current_observation.display_location.city;
+    let fahrenheit = this.props.data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+    let lowTemp = this.props.data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+    let dayForecast = this.props.data.forecast.txt_forecast.forecastday[0].fcttext_metric;
+    let nightForecast = this.props.data.forecast.txt_forecast.forecastday[1].fcttext_metric;
 
     return (
       <div className='weather'>
