@@ -11,7 +11,9 @@ export default class Search extends Component {
 
   handleChange = e => {
     const value = e.target.value;
-    return this.setState = ({
+    
+    this.setState(
+    {
       input: value,
     });
   }
