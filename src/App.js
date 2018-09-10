@@ -6,6 +6,7 @@ import SevenHour from './SevenHour';
 import Tomorrow from './Tomorrow';
 import TenDay from './TenDay';
 import KEY from './KEY';
+import Welcome from './Welcome';
 
 export default class App extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ export default class App extends Component {
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
+          <Welcome />
         </div>
       );  
     }
