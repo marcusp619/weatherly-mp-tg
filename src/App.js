@@ -19,8 +19,8 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/France/Paris.json`)
+  apiFetch = city => {
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({
@@ -28,6 +28,16 @@ export default class App extends Component {
           loading: false 
         });
       });
+  }
+
+  componentDidMount() {
+    let city = this.state.input 
+
+    if(this.state.input === null) { 
+      this.apiFetch();
+    } else {
+      this.apiFetch(city)
+    }
   }
 
   handleSearchChange = e => {
