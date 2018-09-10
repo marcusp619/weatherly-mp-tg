@@ -14,12 +14,13 @@ export default class App extends Component {
 
     this.state = {
       data: {},
-      loading: true
+      loading: true,
+      input: null,
     }
   }
 
   componentDidMount() {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/CA/San_Francisco.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/France/Paris.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({
@@ -27,6 +28,15 @@ export default class App extends Component {
           loading: false 
         });
       });
+  }
+
+  handleSearchChange = e => {
+    const value = e.target.value;
+    
+    this.setState(
+    {
+      input: value,
+    });
   }
 
   render() {
@@ -46,7 +56,7 @@ export default class App extends Component {
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
-          <Welcome />
+          <Welcome handleSearchChange={this.handleSearchChange} input={this.state.input}/>
         </div>
       );  
     }
