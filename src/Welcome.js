@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import './Welcome.css';
+import Search from './Search';
 
 export default class Welcome extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class Welcome extends Component {
   render() {
     return (
       <div>
-        <input type='search' placeholder='search some shit'/>
+        <Search />
       </div>
     );
   }
