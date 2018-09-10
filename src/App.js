@@ -18,13 +18,13 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://api.wunderground.com/api/${KEY}/geolookup/conditions/forecast/q/CA/San_Francisco.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/CA/San_Francisco.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({
           data: json,
           loading: false 
-       });
+        });
       });
   }
 
@@ -34,16 +34,19 @@ export default class App extends Component {
         <div>
           <p>this is loading....</p>
         </div>
-      )
+      );
     } else {
       return (
-      <div className="app">
-        <header className="app__header">
-          <h1 className="app__title">Weatherly</h1>
-        </header>
-        <Weather data={this.state.data} />
-      </div>
-    );  
+        <div className="app">
+          <header className="app__header">
+            <h1 className="app__title">Weatherly</h1>
+          </header>
+          <Weather forecast={this.state.data} />
+          <Tomorrow forecast={this.state.data} />
+          <SevenHour forecast={this.state.data} />
+          <TenDay forecast={this.state.data} />
+        </div>
+      );  
     }
   }
 }
