@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Weather from './Weather';
 import SevenHour from './SevenHour';
 import TenDay from './TenDay';
 import KEY from './KEY';
 import Welcome from './Welcome';
+import Trie from '@markp619/complete-me/lib';
+import data from './largest1000cities';
+let trie = new Trie()
+
+trie.populate(data.data);
 
 export default class App extends Component {
   constructor(props) {
@@ -14,26 +18,35 @@ export default class App extends Component {
     this.state = {
       data: {},
       loading: true,
-    }
+      node: null,
+      wordlist: null,
+    };
   }
 
+  suggestCity = e => {
+    const value = e.target.value;
+    let results = this.state.node.suggest(value);
+
+    this.setState({
+      wordlist: results,
+    });
+  }
+  
   apiFetch = city => {
-    console.log(city)
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
-        console.log(json)
         this.setState({
           data: json,
-          loading: false, 
-        });
+          loading: false,
+          node: trie,
+        })
       });
   }
 
   componentDidMount() {
     let city = this.state.input 
     this.apiFetch(city)
-   
   }
 
   handleSearchChange = value => {
@@ -62,6 +75,11 @@ export default class App extends Component {
             input={this.state.input}/>
           <Weather forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
+          <Welcome 
+            suggestCity={this.suggestCity} 
+            node={this.state.node} 
+            wordlist={this.state.wordlist} 
+          />
         </div>
       );  
     }

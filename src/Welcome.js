@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import Search from './Search';
 
 export default class Welcome extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
-      <div className="welcome">
-        <Search input={this.props.input} handleSearchChange={this.props.handleSearchChange} />
+      <div>
+        <Search 
+          suggestCity={this.props.suggestCity} 
+          node={this.props.node} 
+          wordlist={this.props.wordlist} 
+        />
       </div>
     );
   }
