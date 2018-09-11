@@ -6,7 +6,11 @@ export default class Welcome extends Component {
   render() {
     return (
       <div>
-        <Search suggestCity={this.props.suggestCity} node={this.props.node} />
+        <Search 
+          suggestCity={this.props.suggestCity} 
+          node={this.props.node} 
+          wordlist={this.props.wordlist} 
+        />
       </div>
     );
   }

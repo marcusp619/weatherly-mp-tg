@@ -20,13 +20,13 @@ export default class App extends Component {
       loading: true,
       node: null,
       wordlist: null,
-    }
+    };
   }
 
   suggestCity = e => {
     const value = e.target.value;
     let results = this.state.node.suggest(value);
-    console.log(results.length);
+
     this.setState({
       wordlist: results,
     });
@@ -62,7 +62,11 @@ export default class App extends Component {
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
-          <Welcome suggestCity={this.suggestCity} node={this.state.node} />
+          <Welcome 
+            suggestCity={this.suggestCity} 
+            node={this.state.node} 
+            wordlist={this.state.wordlist} 
+          />
         </div>
       );  
     }
