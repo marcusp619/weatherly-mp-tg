@@ -19,9 +19,11 @@ export default class App extends Component {
   }
 
   apiFetch = city => {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
+    console.log(city)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
+        console.log(json)
         this.setState({
           data: json,
           loading: false, 
@@ -31,18 +33,14 @@ export default class App extends Component {
 
   componentDidMount() {
     let city = this.state.input 
-    console.log(city)
     this.apiFetch(city)
    
   }
 
   handleSearchChange = value => {
-    console.log(value)
-
     this.setState(
     {
       input: value,
-
     });
     this.apiFetch(value)
   }
@@ -60,13 +58,13 @@ export default class App extends Component {
           <header className="app__header">
             <h1 className="app__title">Weatherly</h1>
           </header>
+          <Welcome 
+            handleSearchChange={this.handleSearchChange}
+            input={this.state.input}/>
           <Weather forecast={this.state.data} />
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
-          <Welcome 
-            handleSearchChange={this.handleSearchChange}
-            input={this.state.input}/>
         </div>
       );  
     }

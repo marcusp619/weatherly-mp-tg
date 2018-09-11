@@ -9,7 +9,7 @@ export default class Welcome extends Component {
 
   render() {
     return (
-      <div>
+      <div className="welcome">
         <Search input={this.props.input} handleSearchChange={this.props.handleSearchChange} />
       </div>
     );

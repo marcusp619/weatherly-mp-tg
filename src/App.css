@@ -4,13 +4,11 @@ font-family: 'Open Sans', sans-serif; */
 .app {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
   padding: 25px;
   font-family: 'Open Sans', sans-serif;
 }
 
 .app__header {
-  grid-row: 1 / span 4;
   align-self: center;
   justify-self: center;
   margin-bottom: 200px;
