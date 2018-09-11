@@ -3,7 +3,6 @@ import './Weather.css';
 
 export default function Weather(props) {
 
-  console.log(props);
   let temperature = props.forecast.current_observation.temperature_string;
   let icon = props.forecast.current_observation.icon_url;
   let weatherCondition = props.forecast.current_observation.weather;
