@@ -8,7 +8,7 @@ import KEY from './KEY';
 import Welcome from './Welcome';
 import Trie from '@markp619/complete-me/lib';
 import data from './largest1000cities';
-let trie = new Trie()
+let trie = new Trie();
 
 trie.populate(data.data);
 
@@ -21,6 +21,7 @@ export default class App extends Component {
       loading: true,
       node: null,
       wordlist: null,
+      input: '',
     };
   }
 
@@ -41,21 +42,21 @@ export default class App extends Component {
           data: json,
           loading: false,
           node: trie,
-        })
+        });
       });
   }
 
-  componentDidMount() {
-    let city = this.state.input 
-    this.apiFetch(city)
-  }
-
   handleSearchChange = value => {
-    this.setState(
-    {
+    this.setState({
       input: value,
     });
-    this.apiFetch(value)
+    this.apiFetch(value);
+  }
+
+  componentDidMount() {
+    let city = this.state.input; 
+
+    this.apiFetch(city);
   }
 
   render() {
@@ -73,16 +74,14 @@ export default class App extends Component {
           </header>
           <Welcome 
             handleSearchChange={this.handleSearchChange}
-            input={this.state.input}/>
-          <Weather forecast={this.state.data} />
-          <Tomorrow forecast={this.state.data} />
-          <SevenHour forecast={this.state.data} />
-          <TenDay forecast={this.state.data} />
-          <Welcome 
             suggestCity={this.suggestCity} 
             node={this.state.node} 
             wordlist={this.state.wordlist} 
           />
+          <Weather forecast={this.state.data} />
+          <Tomorrow forecast={this.state.data} />
+          <SevenHour forecast={this.state.data} />
+          <TenDay forecast={this.state.data} />
         </div>
       );  
     }

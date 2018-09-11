@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import './Search.css';
 
 export default class Search extends Component {
-  constructor(props) {
-    super(props) 
-    this.state = {
-      input: '',
-    }
-  }
-
   render() {
     return (
       <div>
@@ -24,7 +17,7 @@ export default class Search extends Component {
             <datalist id='data'>
               {
                 this.props.wordlist &&
-                  this.props.wordlist.map((item, index) => {
+                  this.props.wordlist.slice(0, 10).map((item, index) => {
                     return <option value={item} key={index} />;
                   })
               }
