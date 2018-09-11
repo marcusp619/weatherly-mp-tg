@@ -20,12 +20,9 @@
 .tomorrow__title {
   font-family: 'Elsie', cursive;
   justify-self: center;
-  grid-column: span 2;
 }
 
 .tomorrow__fullForecast {
-  grid-column: 4;
-  grid-column: span 2;
   padding: 13px;
   font-size: 1.2em;
 }
@@ -37,13 +34,11 @@
 }
 
 .tomorrow__todayHigh {
-  grid-row: 3;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 3em;
 }
 
 .tomorrow__todayLow {
-  grid-row: 3;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 3em;
 }

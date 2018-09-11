@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './Search.css';
+import './Search.css';
 
 export default class Search extends Component {
   constructor() {
@@ -12,32 +12,30 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          className="searchField"
-          type='text' 
-          onChange={(event) => {
-            this.setState(
-                {
-                  input:   event.target.value
+      <div className="search">
+        <form className='search-form'>
+          <input
+            className="searchField"
+            type='text' 
+            onChange={(event) => {
+              this.setState(
+                  {
+                    input: event.target.value
+                  }
+                )
+            }}  
+            placeholder='Select another location'
+            onKeyPress={(event) => {
+              if(event.key === 'enter' && this.state.input) {
+                event.preventDefault();
+                console.log('ya did it');
+                this.props.handleSearchChange(this.state.input)
+                event.target.value = ''
                 }
-              )
-          }} 
-          value={this.props.input} 
-          placeholder='search some shit'
-        />
-        <button>MyLocation</button>
-        <button
-          className="searchButton"
-          onClick={(e) => {
-            console.log(this.state.input)
-            e.preventDefault();
-            if(this.state.input) {
-              this.props.handleSearchChange(this.state.input)
               }
             }
-          }
-          >Search</button>    
+          />
+          </form>   
       </div>
     );
   }

@@ -25,17 +25,14 @@
 }
 
 .weather__fullForecast {
-  grid-column: span 3;
   padding: 13px;
 }
 
 .weather__icon {
-  grid-column: span 2;
   width: 100px;
 }
 
 .weather__temp {
-  grid-row: 3;
   font-family: 'IBM Plex Sans', sans-serif;
   text-align: center;
 }
@@ -46,13 +43,11 @@
 }
 
 .weather__todayHigh {
-  grid-row: 3;
   font-size: 3em;
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .weather__todayLow {
-  grid-row: 3;
   font-size: 3em;
   font-family: 'IBM Plex Sans', sans-serif;
 }
