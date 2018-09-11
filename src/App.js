@@ -15,7 +15,6 @@ export default class App extends Component {
     this.state = {
       data: {},
       loading: true,
-      input: null,
     }
   }
 
@@ -25,31 +24,31 @@ export default class App extends Component {
       .then(json => {
         this.setState({
           data: json,
-          loading: false 
+          loading: false, 
         });
       });
   }
 
   componentDidMount() {
     let city = this.state.input 
-
-    if(this.state.input === null) { 
-      this.apiFetch();
-    } else {
-      this.apiFetch(city)
-    }
+    console.log(city)
+    this.apiFetch(city)
+   
   }
 
-  handleSearchChange = e => {
-    const value = e.target.value;
-    
+  handleSearchChange = value => {
+    console.log(value)
+
     this.setState(
     {
       input: value,
+
     });
+    // this.apiFetch(value)
   }
 
   render() {
+    console.log(this.state.input)
     if (!this.state.input) {
       return (
         <div className="welcome">
