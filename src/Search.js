@@ -2,40 +2,35 @@ import React, { Component } from 'react';
 import './Search.css';
 
 export default class Search extends Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props) 
     this.state = {
-      input: undefined
+      input: '',
     }
   }
 
   render() {
     return (
-      <div className="search">
-        <form className='search-form'>
-          <input
-            className="searchField"
-            type='text' 
-            onChange={(event) => {
-              this.setState(
-                  {
-                    input: event.target.value
-                  }
-                )
-            }}  
-            placeholder='Select another location'
-            onKeyPress={(event) => {
-              if(event.key === 'enter' && this.state.input) {
-                event.preventDefault();
-                console.log('ya did it');
-                this.props.handleSearchChange(this.state.input)
-                event.target.value = ''
-                }
+      <div>
+        <div className="search">
+          <form className='search-form'>
+            <input 
+              className="searchField"
+              placeholder='Select another location'
+              type='text'
+              onChange={this.props.suggestCity} 
+              list='data'
+            />
+            <datalist id='data'>
+              {
+                this.props.wordlist &&
+                  this.props.wordlist.map((item, index) => {
+                    return <option value={item} key={index} />;
+                  })
               }
-            }
-          />
-          </form>   
+            </datalist>      
+          </form> 
+        </div>   
       </div>
     );
   }
