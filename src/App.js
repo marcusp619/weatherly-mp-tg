@@ -48,16 +48,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.input)
-    if (!this.state.input) {
-      return (
-        <div className="welcome">
-          <Welcome 
-            handleSearchChange={this.handleSearchChange}
-            input={this.state.input}/>
-        </div>
-      )
-    }
     if (this.state.loading) {
       return (
         <div>
@@ -74,6 +64,9 @@ export default class App extends Component {
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
+          <Welcome 
+            handleSearchChange={this.handleSearchChange}
+            input={this.state.input}/>
         </div>
       );  
     }
