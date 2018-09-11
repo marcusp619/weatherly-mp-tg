@@ -1,5 +1,6 @@
 import React from 'react';
 import './Weather.css';
+import SevenHour from './SevenHour'
 
 export default function Weather(props) {
   let temperature = props.forecast.current_observation.temperature_string;
@@ -14,19 +15,19 @@ export default function Weather(props) {
   return (
     <div className='weather'>
       <h1 className='weather__city'> {city}</h1>
-      <h1 className='weather__city'> Today</h1>
       <h2 className='weather__subtitle'>
         {weatherCondition}
       </h2>
       <img className="weather__icon" src={icon} />
-      <h2 className='weather__temp'>{temperature}</h2>
+      <h2 className='weather__temp'>{temperature}°F</h2>
       <h2 className='weather__todayHigh'>
-        {fahrenheit}
+        {fahrenheit}°F
       </h2>
       <h2 className='weather__todayLow'>
-        {lowTemp}
+        {lowTemp}°F
       </h2>
       <h2 className="weather__fullForecast">{dayForecast} and tonight {nightForecast} </h2>
+      <SevenHour forecast={props.forecast} />
     </div>
   );
 } 

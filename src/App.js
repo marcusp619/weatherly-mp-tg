@@ -63,7 +63,6 @@ export default class App extends Component {
             input={this.state.input}/>
           <Weather forecast={this.state.data} />
           <Tomorrow forecast={this.state.data} />
-          <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
         </div>
       );  

@@ -1,0 +1,7 @@
+.seven-hour {
+    display: -ms-flexbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1 /span 3;
+    justify-self: stretch;
+}
