@@ -44,7 +44,7 @@ export default class App extends Component {
       input: value,
 
     });
-    // this.apiFetch(value)
+    this.apiFetch(value)
   }
 
   render() {
