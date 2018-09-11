@@ -71,15 +71,12 @@ export default class App extends Component {
             <h1 className="app__title">Weatherly</h1>
           </header>
           <Welcome 
-            handleSearchChange={this.handleSearchChange}
-            input={this.state.input}/>
-          <Weather forecast={this.state.data} />
-          <TenDay forecast={this.state.data} />
-          <Welcome 
             suggestCity={this.suggestCity} 
             node={this.state.node} 
             wordlist={this.state.wordlist} 
           />
+          <Weather forecast={this.state.data} />
+          <TenDay forecast={this.state.data} />
         </div>
       );  
     }

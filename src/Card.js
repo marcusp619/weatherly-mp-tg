@@ -9,6 +9,7 @@ export default function Card(props) {
         props.weekday &&
         <h2 className="card__time">{props.weekday}</h2>
       }
+      <img className="card__icon" src={props.image} alt=""/>
       {
         props.high &&
         <h2 className="card__temp">{props.high}°F</h2>
@@ -25,7 +26,6 @@ export default function Card(props) {
         props.temp &&
         <h2 className="card__temp">{props.temp}°F</h2>
       }
-      <img className="card__icon" src={props.image} alt=""/>
     </div>
   );
 }

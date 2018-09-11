@@ -15,11 +15,7 @@ export default function Weather(props) {
   return (
     <div className='weather'>
       <h1 className='weather__city'> {city}</h1>
-      <h2 className='weather__subtitle'>
-        {weatherCondition}
-      </h2>
       <img className="weather__icon" src={icon} />
-      <h2 className='weather__temp'>{temperature}°F</h2>
       <h2 className='weather__todayHigh'>
         {fahrenheit}°F
       </h2>

@@ -26,6 +26,7 @@
 
 .weather__fullForecast {
   padding: 13px;
+  grid-column: 1/ span 3;
 }
 
 .weather__icon {
