@@ -1,41 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
 
-*{
+* {
   box-sizing: border-box;
 }
 
 .card {
-  background: #F5EFFF;
+  background: inherit;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
   padding: 2%;
   border-radius: 4%;
-  box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
-  10px 20px 5px rgba(0,0,0,0.05),
-  -10px 20px 5px rgba(0,0,0,0.05);
   margin-bottom: 2%;
   font-family: 'IBM Plex Sans', sans-serif;
-}
-
-.card__icon {
-  /* display: inline-block; */
-}
-
-
-.card__subtitle {
-  display: inline-block;
-}
-
-.card__temp {
-}
-
-.card__todayLow {
-}
-
-#card0 {
-}
-
-#card5{
 }

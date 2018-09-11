@@ -1,0 +1,15 @@
+.ten-day-container{
+  background: #f7edff;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 40px;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
+  10px 20px 5px rgba(0,0,0,0.05),
+  -10px 20px 5px rgba(0,0,0,0.05);
+  margin-bottom: 2%;
+  font-family: 'IBM Plex Sans', sans-serif;
+}

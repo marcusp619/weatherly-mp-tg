@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Weather from './Weather';
 import SevenHour from './SevenHour';
-import Tomorrow from './Tomorrow';
 import TenDay from './TenDay';
 import KEY from './KEY';
 import Welcome from './Welcome';
@@ -78,8 +77,6 @@ export default class App extends Component {
             wordlist={this.state.wordlist} 
           />
           <Weather forecast={this.state.data} />
-          <Tomorrow forecast={this.state.data} />
-          <SevenHour forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
         </div>
       );  

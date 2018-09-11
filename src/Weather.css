@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 2%;
-  border-radius: 4%;
+  border-radius: 10px;
   justify-items: center;
   align-items: center;
   box-shadow:  0px 15px 5px rgba(0,0,0,0.1),
@@ -26,6 +26,7 @@
 
 .weather__fullForecast {
   padding: 13px;
+  grid-column: 1/ span 3;
 }
 
 .weather__icon {

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
+
+.seven-hour {
+    display: -ms-flexbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1 /span 3;
+    justify-self: stretch;
+}
+
+.seven-hour-card {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
