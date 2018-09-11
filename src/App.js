@@ -9,6 +9,7 @@ import Welcome from './Welcome';
 import Trie from '@markp619/complete-me/lib';
 import data from './largest1000cities';
 let trie = new Trie()
+
 trie.populate(data.data);
 
 export default class App extends Component {
@@ -31,18 +32,30 @@ export default class App extends Component {
       wordlist: results,
     });
   }
-
-
-  componentDidMount() {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/CA/San_Francisco.json`)
+  
+  apiFetch = city => {
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({
           data: json,
           loading: false,
           node: trie,
-        });
+        })
       });
+  }
+
+  componentDidMount() {
+    let city = this.state.input 
+    this.apiFetch(city)
+  }
+
+  handleSearchChange = value => {
+    this.setState(
+    {
+      input: value,
+    });
+    this.apiFetch(value)
   }
 
   render() {
@@ -58,6 +71,9 @@ export default class App extends Component {
           <header className="app__header">
             <h1 className="app__title">Weatherly</h1>
           </header>
+          <Welcome 
+            handleSearchChange={this.handleSearchChange}
+            input={this.state.input}/>
           <Weather forecast={this.state.data} />
           <Tomorrow forecast={this.state.data} />
           <SevenHour forecast={this.state.data} />

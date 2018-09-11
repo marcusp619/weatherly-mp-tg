@@ -5,7 +5,7 @@ export default function Weather(props) {
   let temperature = props.forecast.current_observation.temperature_string;
   let icon = props.forecast.current_observation.icon_url;
   let weatherCondition = props.forecast.current_observation.weather;
-  let city = props.forecast.current_observation.display_location.city;
+  let city = props.forecast.current_observation.display_location.full;
   let fahrenheit = props.forecast.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   let lowTemp = props.forecast.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   let dayForecast = props.forecast.forecast.txt_forecast.forecastday[0].fcttext_metric;
