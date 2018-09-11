@@ -1,20 +1,22 @@
 import React from 'react';
 import './Card.css';
+import './TenDay.css'
 
 export default function Card(props) {
   return (
-    <div className="card" id={props.index}>
+    <div className={props.className} id={props.index}>
       {
         props.weekday &&
         <h2 className="card__time">{props.weekday}</h2>
       }
+      <img className="card__icon" src={props.image} alt=""/>
       {
         props.high &&
-        <h2 className="card__temp">{props.high}</h2>
+        <h2 className="card__temp">{props.high}°F</h2>
       }
       {
         props.low &&
-        <h2 className="card__temp">{props.low}</h2>
+        <h2 className="card__temp">{props.low}°F</h2>
       }
       {
         props.time &&
@@ -22,9 +24,8 @@ export default function Card(props) {
       }
       {
         props.temp &&
-        <h2 className="card__temp">{props.temp}</h2>
+        <h2 className="card__temp">{props.temp}°F</h2>
       }
-      <img className="card__icon" src={props.image} alt=""/>
     </div>
   );
 }
