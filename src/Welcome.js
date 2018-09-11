@@ -3,14 +3,10 @@ import React, { Component } from 'react';
 import Search from './Search';
 
 export default class Welcome extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>
-        <Search />
+        <Search suggestCity={this.props.suggestCity} node={this.props.node} />
       </div>
     );
   }
