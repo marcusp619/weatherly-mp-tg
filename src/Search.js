@@ -12,6 +12,7 @@ export default class Search extends Component {
               placeholder='Select another location'
               type='text'
               onChange={this.props.suggestCity} 
+              onKeyDown={this.props.handleSearchChange}
               list='data'
             />
             <datalist id='data'>

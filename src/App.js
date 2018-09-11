@@ -28,7 +28,7 @@ export default class App extends Component {
   suggestCity = e => {
     const value = e.target.value;
     let results = this.state.node.suggest(value);
-
+    
     this.setState({
       wordlist: results,
     });
@@ -42,15 +42,14 @@ export default class App extends Component {
           data: json,
           loading: false,
           node: trie,
+          input: ','
         });
       });
   }
 
-  handleSearchChange = value => {
-    this.setState({
-      input: value,
-    });
-    this.apiFetch(value);
+  handleSearchChange = e => {
+    let searchedCity = e.target.value;
+    console.log(searchedCity);
   }
 
   componentDidMount() {
