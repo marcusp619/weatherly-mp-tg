@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Weather from './Weather';
-import SevenHour from './SevenHour';
 import TenDay from './TenDay';
 import KEY from './KEY';
 import Welcome from './Welcome';
@@ -46,13 +45,12 @@ export default class App extends Component {
   }
 
   handleSearchChange = e => {
-    console.log('hey')
-
+    localStorage.setItem('input', this.state.input);
     this.apiFetch(this.state.input);
   }
 
   componentDidMount() {
-    let city = this.state.input; 
+    let city =  localStorage.getItem('input') || this.state.input; 
 
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
