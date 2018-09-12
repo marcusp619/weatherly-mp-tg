@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700');
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -14,20 +14,4 @@
   border-radius: 4%;
   margin-bottom: 2%;
   font-family: 'IBM Plex Sans', sans-serif;
-}
-
-.card__subtitle {
-  display: inline-block;
-}
-
-.card__temp {
-}
-
-.card__todayLow {
-}
-
-#card0 {
-}
-
-#card5{
 }

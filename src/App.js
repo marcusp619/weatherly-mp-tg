@@ -7,7 +7,7 @@ import KEY from './KEY';
 import Welcome from './Welcome';
 import Trie from '@markp619/complete-me/lib';
 import data from './largest1000cities';
-let trie = new Trie()
+let trie = new Trie();
 
 trie.populate(data.data);
 
@@ -20,15 +20,18 @@ export default class App extends Component {
       loading: true,
       node: null,
       wordlist: null,
+      input: '',
     };
   }
 
   suggestCity = e => {
     const value = e.target.value;
-    let results = this.state.node.suggest(value);
 
+    let results = this.state.node.suggest(value);
+    
     this.setState({
       wordlist: results,
+      input: value,
     });
   }
   
@@ -38,23 +41,29 @@ export default class App extends Component {
       .then(json => {
         this.setState({
           data: json,
-          loading: false,
-          node: trie,
-        })
+        });
       });
   }
 
-  componentDidMount() {
-    let city = this.state.input 
-    this.apiFetch(city)
+  handleSearchChange = e => {
+    console.log('hey')
+
+    this.apiFetch(this.state.input);
   }
 
-  handleSearchChange = value => {
-    this.setState(
-    {
-      input: value,
-    });
-    this.apiFetch(value)
+  componentDidMount() {
+    let city = this.state.input; 
+
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          data: json,
+          loading: false,
+          node: trie,
+          input: ''
+        });
+      });
   }
 
   render() {
@@ -71,6 +80,7 @@ export default class App extends Component {
             <h1 className="app__title">Weatherly</h1>
           </header>
           <Welcome 
+            handleSearchChange={this.handleSearchChange}
             suggestCity={this.suggestCity} 
             node={this.state.node} 
             wordlist={this.state.wordlist} 
