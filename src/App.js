@@ -48,13 +48,12 @@ export default class App extends Component {
   }
 
   handleSearchChange = e => {
-    localStorage.setItem('input', this.state.input);
     this.apiFetch(this.state.input);
+    localStorage.setItem('input', this.state.input);
   }
 
   componentDidMount() {
     let city =  localStorage.getItem('input') || this.state.input; 
-
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
@@ -64,7 +63,8 @@ export default class App extends Component {
           node: trie,
           input: ''
         });
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {

@@ -13,7 +13,6 @@ export default class Search extends Component {
               type='text'
               onChange={this.props.suggestCity} 
               onKeyUp={(event) => {
-                console.log(event.key)
               if(event.key === 'Enter') {
                 this.props.handleSearchChange();
                 event.target.value = ''
