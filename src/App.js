@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Weather from './Weather';
-import SevenHour from './SevenHour';
 import TenDay from './TenDay';
 import KEY from './KEY';
 import Welcome from './Welcome';
@@ -46,8 +45,7 @@ export default class App extends Component {
   }
 
   handleSearchChange = e => {
-    console.log('hey')
-
+    localStorage.setItem('input', this.state.input);
     this.apiFetch(this.state.input);
   }
 
