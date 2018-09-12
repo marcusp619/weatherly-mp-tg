@@ -50,7 +50,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let city = this.state.input; 
+    let city =  localStorage.getItem('input') || this.state.input; 
 
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
