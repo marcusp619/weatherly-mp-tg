@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should be be match snaps 1`] = `
+<div>
+  <h2
+    className="card__time"
+  >
+    10
+  </h2>
+  <img
+    alt=""
+    className="card__icon"
+    src="10"
+  />
+  <h2
+    className="card__temp"
+  >
+    10
+    °F
+  </h2>
+  <h2
+    className="card__temp"
+  >
+    10
+    °F
+  </h2>
+  <h2
+    className="card__time"
+  >
+    10
+  </h2>
+  <h2
+    className="card__temp"
+  >
+    10
+    °F
+  </h2>
+</div>
+`;
