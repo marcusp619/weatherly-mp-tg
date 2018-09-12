@@ -6,15 +6,15 @@ export default class Search extends Component {
     return (
       <div>
         <div className="search">
-          <form className='search-form'>
+          <div className='search-form'>
             <input 
               className="searchField"
               placeholder='Select another location'
               type='text'
               onChange={this.props.suggestCity} 
               onKeyUp={(event) => {
-                event.preventDefault();
-              if(event.key === 'enter') {
+                console.log(event.key)
+              if(event.key === 'Enter') {
                 this.props.handleSearchChange();
                 event.target.value = ''
                 }
@@ -30,7 +30,7 @@ export default class Search extends Component {
                   })
               }
             </datalist>      
-          </form> 
+          </div> 
         </div>   
       </div>
     );
