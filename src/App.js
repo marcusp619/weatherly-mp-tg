@@ -34,37 +34,37 @@ export default class App extends Component {
     });
   }
   
-  // apiFetch = city => {
-  //   fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       if(json.response.error){
-  //         return alert('Please select a valid location from the list')
-  //       }
-  //       this.setState({
-  //         data: json,
-  //       });
-  //     });
-  // }
+  apiFetch = city => {
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+      .then(response => response.json())
+      .then(json => {
+        if(json.response.error){
+          return alert('Please select a valid location from the list')
+        }
+        this.setState({
+          data: json,
+        });
+      });
+  }
 
   handleSearchChange = e => {
-    localStorage.setItem('input', this.state.input);
     this.apiFetch(this.state.input);
+    localStorage.setItem('input', this.state.input);
   }
 
   componentDidMount() {
     let city =  localStorage.getItem('input') || this.state.input; 
-
-    // fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
-    //   .then(response => response.json())
-    //   .then(json => {
-    //     this.setState({
-    //       data: json,
-    //       loading: false,
-    //       node: trie,
-    //       input: ''
-    //     });
-    //   });
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          data: json,
+          loading: false,
+          node: trie,
+          input: ''
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
