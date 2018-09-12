@@ -26,10 +26,12 @@ export default class App extends Component {
 
   suggestCity = e => {
     const value = e.target.value;
+
     let results = this.state.node.suggest(value);
     
     this.setState({
       wordlist: results,
+      input: value,
     });
   }
   
@@ -39,22 +41,30 @@ export default class App extends Component {
       .then(json => {
         this.setState({
           data: json,
-          loading: false,
-          node: trie,
-          input: ','
         });
       });
   }
 
   handleSearchChange = e => {
-    let searchedCity = e.target.value;
-    console.log(searchedCity);
+    if(e.key === 'enter') {
+      this.apiFetch(this.state.input);
+    }
   }
 
   componentDidMount() {
+    console.log('hey');
     let city = this.state.input; 
 
-    this.apiFetch(city);
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          data: json,
+          loading: false,
+          node: trie,
+          input: ''
+        });
+      });
   }
 
   render() {

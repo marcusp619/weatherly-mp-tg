@@ -12,9 +12,16 @@ export default class Search extends Component {
               placeholder='Select another location'
               type='text'
               onChange={this.props.suggestCity} 
-              onKeyDown={this.props.handleSearchChange}
+              onKeyUp={(event) => {
+                event.preventDefault();
+              if(event.key === 'enter') {
+                this.props.handleSearchChange();
+                event.target.value = ''
+                }
+              }
+            }
               list='data'
-            />
+            /> 
             <datalist id='data'>
               {
                 this.props.wordlist &&
