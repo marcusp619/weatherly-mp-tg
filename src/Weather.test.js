@@ -14,4 +14,9 @@ describe ('<Weather />', () => {
     
     expect(wrapper).toBeDefined();
   });
+  it('it should render a Search Component', () => {
+    const wrapper = shallow(<Weather />);
+
+    expect(wrapper.find('Search').length).toEqual(1);
+  });
 });
