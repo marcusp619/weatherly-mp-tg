@@ -1,25 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './App';
+import data from './Data';
 import { shallow, mount, render } from 'enzyme';
 
 describe ('<App />', () => {
+  let apiFetch;
+  let wrapper;
 
-  it('should shallow and mount', () => {
-    let wrapper = mount(<App />)
+  beforeEach(() => {
+    fetch.resetMocks();
+    fetch.mockResponse(JSON.stringify(data))
+    wrapper = shallow(<App />);
 
+  });
+
+  it('should mount', () => {
     expect(wrapper).toBeDefined();
   })
-  it('Should render on the DOM', () => {
-    const wrapper = shallow(<App />)
-
-    expect(wrapper.find('Weather').length).toEqual(2)
-    expect(wrapper.find('SevenHour').length).toEqual(1)
+  it('Should shallow', () => {
+    let wrapper2 = mount(<App />);
+    expect(wrapper2).toBeDefined();
   })
 
-  it('should call render', () => {
-    const wrapper = shallow(<App />)
-
+  it.skip('should call render', () => {
+    
     expect(wrapper.render).toBeDefined();
+  })
+  
+  it.skip('the data is weather data', done => {
+
+    expect(wrapper.state).toBeDefined();
   })
 })

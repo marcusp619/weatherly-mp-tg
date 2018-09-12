@@ -3,14 +3,15 @@ import './Weather.css';
 import SevenHour from './SevenHour'
 
 export default function Weather(props) {
-  let temperature = props.forecast.current_observation.temperature_string;
-  let icon = props.forecast.current_observation.icon_url;
-  let weatherCondition = props.forecast.current_observation.weather;
-  let city = props.forecast.current_observation.display_location.full;
-  let fahrenheit = props.forecast.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-  let lowTemp = props.forecast.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-  let dayForecast = props.forecast.forecast.txt_forecast.forecastday[0].fcttext_metric;
-  let nightForecast = props.forecast.forecast.txt_forecast.forecastday[1].fcttext_metric;
+  const { forecast } = props;
+  let temperature = forecast.current_observation.temperature_string;
+  let icon = forecast.current_observation.icon_url;
+  let weatherCondition = forecast.current_observation.weather;
+  let city = forecast.current_observation.display_location.full;
+  let fahrenheit = forecast.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  let lowTemp = forecast.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+  let dayForecast = forecast.forecast.txt_forecast.forecastday[0].fcttext_metric;
+  let nightForecast = forecast.forecast.txt_forecast.forecastday[1].fcttext_metric;
 
   return (
     <div className='weather'>
