@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Welcome /> should be be match snaps 1`] = `
+<div>
+  <div>
+    <div
+      className="search"
+    >
+      <div
+        className="search-form"
+      >
+        <input
+          className="searchField"
+          list="data"
+          onKeyUp={[Function]}
+          placeholder="Select another location"
+          type="text"
+        />
+        <datalist
+          id="data"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

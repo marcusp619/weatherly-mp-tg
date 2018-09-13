@@ -2,7 +2,8 @@ import React from 'react';
 import Card from './Card';
 import './SevenHour.css';
 
-export default function SevenHour(props) {    
+export default function SevenHour(props) {
+  // console.log(props)  
   return (
     <div className="seven-hour">
       {

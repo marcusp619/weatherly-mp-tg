@@ -29,13 +29,9 @@ describe ('<App />', () => {
     expect(wrapper2).toBeDefined();
   })
 
-  it.skip('should call render', () => {
+  it('should call render', () => {
     
     expect(wrapper.render).toBeDefined();
   })
   
-  it.skip('the data is weather data', done => {
-
-    expect(wrapper.state).toBeDefined();
-  })
 })
