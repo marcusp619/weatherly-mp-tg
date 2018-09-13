@@ -7,7 +7,7 @@ export default class Search extends Component {
       <div className='search-form'>
         <input 
           className="searchField"
-          placeholder='Select another location'
+          placeholder='Weatherly'
           type='text'
           onChange={this.props.suggestCity} 
           onKeyUp={(event) => {
