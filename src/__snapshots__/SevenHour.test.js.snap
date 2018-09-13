@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SevenHour /> should be be match snaps 1`] = `
+<div
+  className="seven-hour"
+>
+  <div
+    className="seven-hour-card"
+    id="card0"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      12:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      47
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card1"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      1:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      49
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card2"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      2:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      49
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card3"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/clear.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      3:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      51
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card4"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/clear.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      4:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      50
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card5"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/clear.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      5:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      48
+      °F
+    </h2>
+  </div>
+  <div
+    className="seven-hour-card"
+    id="card6"
+  >
+    <img
+      alt=""
+      className="card__icon"
+      src="http://icons.wxug.com/i/c/k/nt_clear.gif"
+    />
+    <h2
+      className="card__time"
+    >
+      6:00 PM
+    </h2>
+    <h2
+      className="card__temp"
+    >
+      45
+      °F
+    </h2>
+  </div>
+</div>
+`;
