@@ -38,8 +38,9 @@ export default class App extends Component {
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
-        if(json.response.error){
-          return alert('Please select a valid location from the list')
+        console.log(json)
+        if(json.response.error || json.response.results){
+          return alert('Please enter a zip or city (,) state/country')
         }
         this.setState({
           data: json,
