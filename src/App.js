@@ -42,6 +42,7 @@ export default class App extends Component {
         if(json.response.error || json.response.results){
           return alert('Please enter a zip or city (,) state/country')
         }
+        localStorage.setItem('input', this.state.input);
         this.setState({
           data: json,
         });
@@ -50,7 +51,6 @@ export default class App extends Component {
 
   handleSearchChange = e => {
     this.apiFetch(this.state.input);
-    localStorage.setItem('input', this.state.input);
   }
 
   componentDidMount() {
@@ -78,9 +78,6 @@ export default class App extends Component {
     } else {
       return (
         <div className="app">
-          <header className="app__header">
-            <h1 className="app__title">Weatherly</h1>
-          </header>
           <Welcome 
             handleSearchChange={this.handleSearchChange}
             suggestCity={this.suggestCity} 
