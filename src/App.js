@@ -4,7 +4,7 @@ import Weather from './Weather';
 import TenDay from './TenDay';
 import KEY from './KEY';
 import Welcome from './Welcome';
-import Trie from '@markp619/complete-me/lib';
+import Trie from './@markp619/complete-me/lib';
 import data from './largest1000cities';
 let trie = new Trie();
 
@@ -27,19 +27,19 @@ export default class App extends Component {
     const value = e.target.value;
 
     let results = this.state.node.suggest(value);
-    
+
     this.setState({
       wordlist: results,
       input: value,
     });
   }
-  
+
   apiFetch = city => {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
         console.log(json)
-        if(json.response.error || json.response.results){
+        if (json.response.error || json.response.results) {
           return alert('Please enter a zip or city (,) state/country')
         }
         localStorage.setItem('input', this.state.input);
@@ -54,8 +54,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let city =  localStorage.getItem('input') || this.state.input; 
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${ city || 'autoip'}.json`)
+    let city = localStorage.getItem('input') || this.state.input;
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
         this.setState({
@@ -78,16 +78,16 @@ export default class App extends Component {
     } else {
       return (
         <div className="app">
-          <Welcome 
+          <Welcome
             handleSearchChange={this.handleSearchChange}
-            suggestCity={this.suggestCity} 
-            node={this.state.node} 
-            wordlist={this.state.wordlist} 
+            suggestCity={this.suggestCity}
+            node={this.state.node}
+            wordlist={this.state.wordlist}
           />
           <Weather forecast={this.state.data} />
           <TenDay forecast={this.state.data} />
         </div>
-      );  
+      );
     }
   }
 }
