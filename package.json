@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://github.com/marcusp619/weatherly-mp-tg",
   "dependencies": {
+    "eslint": "^5.12.1",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
