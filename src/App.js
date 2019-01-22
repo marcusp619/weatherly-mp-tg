@@ -35,7 +35,7 @@ export default class App extends Component {
   }
 
   apiFetch = city => {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
+    fetch(`https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
       .then(response => response.json())
       .then(json => {
         console.log(json)
