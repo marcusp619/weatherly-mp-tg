@@ -1,1 +1,1 @@
-![Wireframe](./IMG_20180904_135525.jpg)
+![Wireframe](./Screen_Shot_2019-01-22_at_11.22.05_AM.png)
