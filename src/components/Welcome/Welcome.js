@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 // import './Welcome.css';
-import Search from './Search';
+import Search from './components/Search/Search';
 
 export default class Welcome extends Component {
   render() {
     return (
       <div>
-        <Search 
+        <Search
           handleSearchChange={this.props.handleSearchChange}
-          suggestCity={this.props.suggestCity} 
-          node={this.props.node} 
-          wordlist={this.props.wordlist} 
+          suggestCity={this.props.suggestCity}
+          node={this.props.node}
+          wordlist={this.props.wordlist}
         />
       </div>
     );
