@@ -1,29 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TenDay from './TenDay'
+import Weather from './Weather';
 import { shallow, mount, render } from 'enzyme';
-import data from './Data'
+import data from '../../../utils/Data';
 
-describe ('<TenDay />', () => {
+describe('<Weather />', () => {
   let wrapper;
-  let forecast = data
+  let forecast = data;
   beforeEach(() => {
-    wrapper = shallow(<TenDay forecast={data} />)
+    wrapper = shallow(<Weather forecast={data} />);
   });
 
   it('should shallow and mount', () => {
-
     expect(wrapper).toBeDefined();
-  })
+  });
 
   it('should call render', () => {
-
     expect(wrapper.render).toBeDefined();
-  })
+  });
 
   it('should be be match snaps', () => {
-    let wrapper2 = mount(<TenDay forecast={data} />)
+    let wrapper2 = mount(<Weather forecast={data} />);
 
     expect(wrapper2).toMatchSnapshot();
-  })
-})
+  });
+});

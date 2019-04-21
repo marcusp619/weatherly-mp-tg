@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Weather from './Weather';
-import TenDay from './TenDay';
-import KEY from './KEY';
-import Welcome from './Welcome';
-import Trie from './@markp619/complete-me/lib';
-import data from './largest1000cities';
+import Weather from '../Weather/Weather';
+import TenDay from '../TenDay/TenDay';
+import Welcome from '../Welcome/Welcome';
+import Trie from '../../utils/@markp619/complete-me/lib';
+import data from '../../utils/largest1000cities';
 let trie = new Trie();
 
 trie.populate(data.data);
@@ -19,7 +18,7 @@ export default class App extends Component {
       loading: true,
       node: null,
       wordlist: null,
-      input: '',
+      input: ''
     };
   }
 
@@ -30,32 +29,38 @@ export default class App extends Component {
 
     this.setState({
       wordlist: results,
-      input: value,
+      input: value
     });
-  }
+  };
 
   apiFetch = city => {
-    fetch(`https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
+    fetch(
+      `https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city ||
+        'autoip'}.json`
+    )
       .then(response => response.json())
       .then(json => {
-        console.log(json)
+        console.log(json);
         if (json.response.error || json.response.results) {
-          return alert('Please enter a zip or city (,) state/country')
+          return alert('Please enter a zip or city (,) state/country');
         }
         localStorage.setItem('input', this.state.input);
         this.setState({
-          data: json,
+          data: json
         });
       });
-  }
+  };
 
   handleSearchChange = e => {
     this.apiFetch(this.state.input);
-  }
+  };
 
   componentDidMount() {
     let city = localStorage.getItem('input') || this.state.input;
-    fetch(`https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city || 'autoip'}.json`)
+    fetch(
+      `https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city ||
+        'autoip'}.json`
+    )
       .then(response => response.json())
       .then(json => {
         this.setState({
