@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import './Welcome.css';
-import Search from './components/Search/Search';
+import Search from '../Search/Search';
 
 export default class Welcome extends Component {
   render() {

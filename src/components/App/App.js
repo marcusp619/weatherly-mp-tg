@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Weather from '../Weather/Weather';
 import TenDay from '../TenDay/TenDay';
-import KEY from '../../KEY';
 import Welcome from '../Welcome/Welcome';
-import Trie from '../../../utils/@markp619/complete-me/lib';
-import data from '../../../utils/largest1000cities';
+import Trie from '../../utils/@markp619/complete-me/lib';
+import data from '../../utils/largest1000cities';
 let trie = new Trie();
 
 trie.populate(data.data);

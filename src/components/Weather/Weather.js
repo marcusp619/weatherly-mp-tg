@@ -1,6 +1,6 @@
 import React from 'react';
 import './Weather.css';
-import SevenHour from './components/SevenHour/SevenHour';
+import SevenHour from '../SevenHour/SevenHour';
 
 export default function Weather(props) {
   const { forecast } = props;
