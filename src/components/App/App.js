@@ -35,8 +35,8 @@ export default class App extends Component {
 
   apiFetch = city => {
     fetch(
-      `https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city ||
-        'autoip'}.json`
+      `api.openweathermap.org/data/2.5/forecast/daily?q=${city ||
+        'autoip'}&mode=xml&units=metric&cnt=7&appid=a902060ee1027a975c4a8ad3537718a2`
     )
       .then(response => response.json())
       .then(json => {
@@ -57,18 +57,16 @@ export default class App extends Component {
 
   componentDidMount() {
     let city = localStorage.getItem('input') || this.state.input;
-    fetch(
-      `https://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${city ||
-        'autoip'}.json`
-    )
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=London&APPID=`)
       .then(response => response.json())
       .then(json => {
-        this.setState({
-          data: json,
-          loading: false,
-          node: trie,
-          input: ''
-        });
+        console.log(json);
+        // this.setState({
+        //   data: json,
+        //   loading: false,
+        //   node: trie,
+        //   input: ''
+        // });
       })
       .catch(err => console.log(err));
   }
